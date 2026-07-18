@@ -1,0 +1,10 @@
+id: mockbean-removed
+title: "@MockBean removed in Spring Boot 4"
+triggers:
+  errors:
+    - "package org\\.springframework\\.boot\\.test\\.mock\\.mockito does not exist"
+    - "cannot find symbol.*MockBean"
+fix: >
+  @MockBean and org.springframework.boot.test.mock.mockito.* were removed in
+  Spring Boot 4. Use @MockitoBean from
+  org.springframework.test.context.bean.override.mockito.MockitoBean instead.

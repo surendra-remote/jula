@@ -1,0 +1,13 @@
+id: no-spring-context-unit-phase
+title: "Unit-only phase forbids Spring context tests"
+triggers:
+  errors:
+    - "Failed to load ApplicationContext"
+    - "Could not resolve placeholder"
+    - "No qualifying bean of type"
+    - "package org.springframework.boot.test.autoconfigure"
+fix: >
+  Rewrite as pure JUnit or MockitoExtension unit test. Remove @SpringBootTest,
+  @WebMvcTest, @DataJpaTest, @ContextConfiguration, @SpringJUnitConfig,
+  @EnableFeignClients, @Autowired, @MockBean and @MockitoBean. Mock dependencies
+  with @Mock and create the class under test with @InjectMocks or direct construction.

@@ -1,0 +1,11 @@
+id: mockito-exact-args
+title: "Prefer exact Mockito arguments"
+triggers:
+  errors:
+    - "Strict stubbing argument mismatch"
+    - "PotentialStubbingProblem"
+fix: >
+  Use exact Mockito arguments when the source passes a known value. Use any(),
+  anyString(), etc. only when the source transforms the input or the exact value
+  is irrelevant. Ensure mocked return objects populate every field read by the
+  class under test.

@@ -1,0 +1,9 @@
+id: junit4-on-classpath
+title: "JUnit 4 API not present - use Jupiter"
+triggers:
+  errors:
+    - "package org\\.junit does not exist"
+    - "cannot find symbol.*class RunWith"
+fix: >
+  Use JUnit 5 (Jupiter): import org.junit.jupiter.api.Test and
+  org.junit.jupiter.api.Assertions.*; do not use org.junit.Test or @RunWith.

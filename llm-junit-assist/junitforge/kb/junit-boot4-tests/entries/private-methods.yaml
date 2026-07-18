@@ -1,0 +1,10 @@
+id: private-methods
+title: "Do not call private helper methods directly"
+triggers:
+  errors:
+    - ".* has private access in .*"
+    - "cannot find symbol.*toIndentedString"
+fix: >
+  Do not call private methods directly and do not use reflection to invoke
+  private helper methods. Cover private helpers through public behavior such as
+  toString(), mapper methods, or service public methods.

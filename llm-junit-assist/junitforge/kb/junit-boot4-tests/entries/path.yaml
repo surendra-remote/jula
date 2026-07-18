@@ -1,0 +1,10 @@
+id: junit-boot3-tests
+title: JUnit 5 test generation for Spring Boot 3.5 (jakarta)
+description: >
+  Knowledge base of common compile/test errors hit when generating JUnit tests
+  for a Spring Boot 3.5 / Spring Framework 6 / Java 17 codebase, and their fixes.
+  Consulted by the compile-repair loop to enrich the fix prompt. Standalone copy
+  owned by junitforge.
+target_constraints:
+  spring-boot: ">=3.0.0"
+  java-version: "17"

@@ -1,0 +1,15 @@
+id: slice-annotations-moved
+title: "@WebMvcTest/@WebFluxTest moved packages in Spring Boot 4"
+triggers:
+  errors:
+    - "package org\\.springframework\\.boot\\.test\\.autoconfigure\\.web\\.(servlet|reactive) does not exist"
+    - "cannot find symbol.*WebMvcTest"
+    - "cannot find symbol.*WebFluxTest"
+fix: >
+  Spring Boot 4 moved the test-slice annotations out of spring-boot-test-autoconfigure
+  into per-technology packages: @WebMvcTest is now
+  org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest (jar
+  spring-boot-webmvc-test) and @WebFluxTest is
+  org.springframework.boot.webflux.test.autoconfigure.WebFluxTest (jar
+  spring-boot-webflux-test). Use the new import; if the jar is not on the test
+  classpath, that slice is unavailable in this module.
