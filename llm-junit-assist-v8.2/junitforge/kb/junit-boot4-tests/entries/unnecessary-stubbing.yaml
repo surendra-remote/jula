@@ -1,0 +1,10 @@
+id: unnecessary-stubbing
+title: "Mockito UnnecessaryStubbingException"
+triggers:
+  errors:
+    - "UnnecessaryStubbingException"
+    - "Unnecessary stubbings detected"
+fix: >
+  Mockito strict stubbing flags when(...) stubs that no test path uses. Remove the
+  unused stub, move it into the specific test that needs it, or use
+  org.mockito.Mockito.lenient() for a stub shared across divergent paths.

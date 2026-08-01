@@ -1,0 +1,13 @@
+id: lombok-data-accessors
+title: "Lombok @Data accessor and constructor rules"
+triggers:
+  errors:
+    - "cannot find symbol.*get[A-Z0-9_]+"
+    - "constructor .* cannot be applied to given types"
+    - "cannot find symbol.*set[A-Z0-9_]+"
+fix: >
+  For Lombok @Data, derive getters and setters only from Java field names, not
+  database annotations. @Data does not imply @AllArgsConstructor or
+  @NoArgsConstructor. Use no-args construction plus setters unless explicit
+  constructors are listed. Primitive boolean active uses isActive(); Boolean
+  active uses getActive(); boolean isActive uses isActive() and setActive(...).

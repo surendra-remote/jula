@@ -1,0 +1,8 @@
+id: missing-assertions-import
+title: "JUnit assertions not imported"
+triggers:
+  errors:
+    - "cannot find symbol.*method assert(Equals|True|False|Throws|NotNull|Null)"
+fix: >
+  Add a static import: import static org.junit.jupiter.api.Assertions.*; (or the
+  specific assertion). For exceptions use assertThrows(Type.class, () -> ...).

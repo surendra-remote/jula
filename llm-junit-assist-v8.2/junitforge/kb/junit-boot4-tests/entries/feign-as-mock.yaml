@@ -1,0 +1,11 @@
+id: feign-as-mock
+title: "OpenFeign clients are Mockito collaborators"
+triggers:
+  errors:
+    - "EnableFeignClients"
+    - "No Feign Client for loadBalancing defined"
+    - "Failed to instantiate .*Feign"
+fix: >
+  Do not test Feign interfaces directly and do not start Feign/Spring context.
+  In ServiceImpl tests, declare Feign client interfaces as @Mock collaborators
+  and stub only methods actually called by the source code.

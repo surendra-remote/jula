@@ -1,0 +1,11 @@
+id: value-fields-reflection
+title: "Inject @Value fields without loading application.yaml"
+triggers:
+  errors:
+    - "Cannot invoke .* because .* is null"
+    - "Could not resolve placeholder"
+fix: >
+  Do not load application.yaml. If the tested method reads an @Value field, set
+  it in @BeforeEach using ReflectionTestUtils.setField(instance, "fieldName",
+  mockValue). Inject host:port if production code adds http:// itself; inject a
+  full URL only when production code expects one.

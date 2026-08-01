@@ -1,0 +1,8 @@
+id: javax-to-jakarta
+title: "javax.* moved to jakarta.* on Spring 6+/Boot 3+"
+triggers:
+  errors:
+    - "package javax\\.(servlet|persistence|validation|annotation) does not exist"
+fix: >
+  This stack uses Jakarta EE namespaces. Replace javax.servlet.* /
+  javax.persistence.* / javax.validation.* with the jakarta.* equivalents.
